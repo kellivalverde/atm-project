@@ -50,7 +50,7 @@ public class AtmClientApp {
 					System.out.println("Your current balance is " + myAtm.getBalance());
 				} else {
 					System.out.println("You have exited. Thank you for banking with us today! Goodbye.");
-					System.exit(0);
+					System.exit(0);  //need to figure out how to loop this so it prints after "another" option
 				}
 
 				System.out.println("Choose another option: ");
