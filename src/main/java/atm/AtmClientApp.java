@@ -13,52 +13,56 @@ public class AtmClientApp {
 		System.out.println("Please enter your PIN:");
 		String enteredPin = input.nextLine(); // PIN is a String becasue it doesn't need to do or mess up any math
 
-
 		if (myAtm.getPin().equals(enteredPin)) { // uses accessor method getPin
 			System.out.println("Welcome to WCCI Bank!");
 		}
 
-		System.out.println("Choose and option: ");
+		System.out.println("Choose an option: ");
 		System.out.println("Press 1 to deposit funds.");
-		System.out.println("Press 2 to withdraw funds.");	
+		System.out.println("Press 2 to withdraw funds.");
 		System.out.println("Press 3 to check your balance.");
 		System.out.println("Press 4 to exit.");
 		String menuOption = input.nextLine();
-		
-		//control flow of code into one of these options
-		
-		if(menuOption.contentEquals("1")) {
-			System.out.println("Enter deposit amount: ");
-			int amount = input.nextInt();
-			myAtm.deposit(amount);
+
+		// control flow of code into one of these options
+
+		while (!menuOption.contentEquals("4")) {     //loop while menuOption does not equal 4
+
+			if (menuOption.contentEquals("1")) {
+				System.out.println("Enter deposit amount: ");
+				int amountToDeposit = input.nextInt();
+				myAtm.deposit(amountToDeposit);
+				input.nextLine(); //gives us input separation
+
+			} else if (menuOption.equals("2")) {
+				System.out.println("Enter withdraw amount:");
+				int amountToWithdraw = input.nextInt();
+				myAtm.withdraw(amountToWithdraw);
+				input.nextLine(); //gives us input separation
+
+			} else if (menuOption.contentEquals("3")) {
+				System.out.println("Your current balance is " + myAtm.getBalance());
+			} else {
+				System.out.println("You have exited. Thank you for banking with us today! Goodbye.");
+				System.exit(0);
+			}
+
+			
+			System.out.println("Choose another option: ");
+			System.out.println("Press 1 to deposit funds.");
+			System.out.println("Press 2 to withdraw funds.");
+			System.out.println("Press 3 to check your balance.");
+			System.out.println("Press 4 to exit.");
+			menuOption = input.nextLine();
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		input.close();
+			
+			
+			
+			
+			
+			
+			input.close();
+		}
 	}
-}
 
-// create an instance of Atm. ...from Atm class?
-
-/*
- * PIN
- * 
- * prompt the user for a PIN number via the console.
- *
- * display either a success or failure message based on the PIN the user
- * entered.
- */
-
-/*
- * Allow Deposits display a menu, with only one option for now: Press 1 to
- * deposit funds. prompt the user to select an option. So long as she selects
- * anything other than 1, redisplay the menu. prompt the user for a deposit
- * amount. call the deposit method on Atm to deposit the amount specified.
- * display the current account balance.
- */

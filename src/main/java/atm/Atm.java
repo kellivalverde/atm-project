@@ -2,16 +2,16 @@ package atm;
 
 public class Atm {
 
-	private int balance;
+	private double balance;
 	private String requiredPin = "1234";
 
 		
-	public Atm(int balance, String requiredPin) {
+	public Atm(double balance, String requiredPin) {
 		this.balance = balance;
 		this.requiredPin = requiredPin;
 	}
 
-	public int getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 
@@ -20,7 +20,7 @@ public class Atm {
 	}
 	
 	
-	public void withdraw(int amount) {
+	public void withdraw(double amount) {
 		if (balance > amount) {
 			balance -= amount;
 		} else {
@@ -28,7 +28,7 @@ public class Atm {
 		}
 	}
 
-	public void deposit(int amount) {
+	public void deposit(double amount) {
 		balance += amount;
 	}
 
