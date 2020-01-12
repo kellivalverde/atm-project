@@ -23,6 +23,8 @@ public class AtmClientApp {
 		if (myAtm.getPin().equals(enteredPin)) { // uses accessor method getPin
 			System.out.println("Welcome to WCCI Bank!");
 
+			//make into an array?
+			
 			System.out.println("Choose an option: ");
 			System.out.println("Press 1 to deposit funds.");
 			System.out.println("Press 2 to withdraw funds.");
